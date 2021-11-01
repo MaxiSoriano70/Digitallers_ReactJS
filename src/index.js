@@ -2,11 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+/*import Ejemplo from './Ejemplo';
+import EjemploDos from './EjemploDos'*/
+/*<Ejemplo/>
+<EjemploDos/>*/
+import ListadoPersonas from './ListadoPersonas'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <div className="container">
+      <ListadoPersonas/>
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );
