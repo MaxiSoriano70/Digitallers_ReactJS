@@ -6,7 +6,7 @@ import App from './App';
 import EjemploDos from './EjemploDos'*/
 /*<Ejemplo/>
 <EjemploDos/>*/
-import ListadoPersonas from './ListadoPersonas'
+import ListadoPersonas from './ListadoPersonas';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

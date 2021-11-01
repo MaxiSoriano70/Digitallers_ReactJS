@@ -4,4 +4,7 @@ body{
 .tituloprincipal{
     color: red;
 }
+.boton-reloj{
+    margin-left: 30px;
+}
 @import '~bootstrap/dist/css/bootstrap.min.css';

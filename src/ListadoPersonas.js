@@ -1,5 +1,7 @@
 import React from 'react';
 import './ListadoPersonas.css';
+import Reloj from './Reloj';
+import Tabla from './Tabla';
 
 class ListadoPersonas extends React.Component{
     constructor(props){
@@ -19,10 +21,12 @@ class ListadoPersonas extends React.Component{
                     empleo: "Jubilado"
                 }
             ],
-            titulo: 'Listado de Personas Seteado desde el state'
+            titulo: 'Listado de Personas Seteado desde el state',
+            mostarReloj:true
         }
         this.cambiarTitulo=this.cambiarTitulo.bind(this);
         this.otroEjemploEventoState=this.otroEjemploEventoState.bind(this);
+        this.cambiarEstadoReloj=this.cambiarEstadoReloj.bind(this);
     }
     cambiarTitulo(){
         let {titulo}=this.state;
@@ -38,34 +42,36 @@ class ListadoPersonas extends React.Component{
             titulo:"Te cambie el titulo desde el SETSTATE"
         })
     }
+    cambiarEstadoReloj(){
+        if(this.state.mostarReloj){
+            this.setState({
+                mostarReloj: false
+            })
+        }
+        else{
+            this.setState({
+                mostarReloj:true
+            })
+        }
+    }
     render(){
+        const relojBool=this.state.mostarReloj;
+        let reloj;
+        if(relojBool){
+            reloj=<Reloj/>
+        }
+        else{
+            reloj=""
+        }
         return(
             <React.Fragment>
             <h1 className="tituloprincipal">{this.state.titulo}</h1>
             <button className="btn btn-primary mb-4" onClick={this.otroEjemploEventoState}>Modificar Titulo</button>
-            <table className="table table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Trabajo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Maria Perez</td>
-                        <td>Gerente</td>
-                    </tr>
-                    <tr>
-                        <td>Karen Dominguez</td>
-                        <td>Vendedor</td>
-                    </tr>
-                    <tr>
-                        <td>Natalia Natalia</td>
-                        <td>Jubilado</td>
-                    </tr>
-                </tbody>
-            </table>
+            <button className="btn btn-secondary boton-reloj mb-4" onClick={this.cambiarEstadoReloj}>Mostar y ocultar Reloj</button>
+            <Tabla personas={this.state.objPersonas} tituloParametroLoco="Que se yo estoy ReLoco"/>
             <h1>Titulo sin colorear</h1>
+            <hr/>
+            {reloj}
             </React.Fragment>
         )
     }
