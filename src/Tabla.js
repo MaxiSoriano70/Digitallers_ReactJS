@@ -1,20 +1,23 @@
-import React,{Component, component, useState} from 'react';
+import React,{Component} from 'react';
 function CabeceraTabla() {
     return(
         <thead>
             <tr>
                <th>Nombre</th>
                <th>Trabajo</th>
+               <th>Eliminar</th>
             </tr>
         </thead>
     )
 }
 function BodyTabla(props) {
+    const {borrarPersonaRef} = props;
     const filas=props.personasTabla.map((personas,indice)=>{
         return(
             <tr key={indice}>
                 <td>{personas.nombre}</td>
                 <td>{personas.empleo}</td>
+                <td><button className="btn btn-danger" onClick={()=>borrarPersonaRef(indice)}>x</button></td>
             </tr>
         )
     })
@@ -25,17 +28,15 @@ function BodyTabla(props) {
 
 class Tabla extends Component{
     constructor(props){
-        console.log("Parametros recibidos por el componente tabla.");
-        console.log(props.personas);
-        console.log(props.tituloParametroLoco);
         super(props);
+        this.state=Object.assign({},this.props)
     }
     render(){
-        const{personas}=this.props;
+        const{personas,borrarPersona}=this.props;
         return(
             <table className="table table-bordered table-hover">
                 <CabeceraTabla/>
-                <BodyTabla personasTabla={personas}/>
+                <BodyTabla personasTabla={personas} borrarPersonaRef={borrarPersona}/>
             </table>
         )
     }

@@ -27,6 +27,15 @@ class ListadoPersonas extends React.Component{
         this.cambiarTitulo=this.cambiarTitulo.bind(this);
         this.otroEjemploEventoState=this.otroEjemploEventoState.bind(this);
         this.cambiarEstadoReloj=this.cambiarEstadoReloj.bind(this);
+        this.borrarPersona=this.borrarPersona.bind(this);
+    }
+    borrarPersona(indice){
+        const{objPersonas}=this.state;
+        this.setState({
+            objPersonas: objPersonas.filter((personas,index)=>{
+                return index!==indice
+            })
+        })
     }
     cambiarTitulo(){
         let {titulo}=this.state;
@@ -68,7 +77,7 @@ class ListadoPersonas extends React.Component{
             <h1 className="tituloprincipal">{this.state.titulo}</h1>
             <button className="btn btn-primary mb-4" onClick={this.otroEjemploEventoState}>Modificar Titulo</button>
             <button className="btn btn-secondary boton-reloj mb-4" onClick={this.cambiarEstadoReloj}>Mostar y ocultar Reloj</button>
-            <Tabla personas={this.state.objPersonas} tituloParametroLoco="Que se yo estoy ReLoco"/>
+            <Tabla personas={this.state.objPersonas} tituloParametroLoco="Que se yo estoy ReLoco" borrarPersona={this.borrarPersona}/>
             <h1>Titulo sin colorear</h1>
             <hr/>
             {reloj}
