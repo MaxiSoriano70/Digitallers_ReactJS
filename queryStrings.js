@@ -3,7 +3,7 @@ const Route =  window.ReactRouterDOM.Route;
 const Link =  window.ReactRouterDOM.Link;
 const Switch =  window.ReactRouterDOM.Switch;
 const NavLink =  window.ReactRouterDOM.NavLink;
-const useLocation=window.ReactRouterDOM.useLocation;
+const useLocation = window.ReactRouterDOM.useLocation;
 
 function EjemploQueryString(){
     return(
@@ -21,23 +21,23 @@ function useQuery(){
 }
 
 function QueryStringsDemo(){
-    let quety=useQuery();
+    let query=useQuery();
     return(
         <div>
             <h1>Hola Mundo</h1>
             <h2>Cuentas</h2>
             <ul>
                 <li>
-                    <link to="/ceunta?nombre=nextflix&id=1">Netflix</link>
+                    <Link to="/cuenta?nombre=Nextflix&id=1">Netflix</Link>
                 </li>
                 <li>
-                    <link to="/ceunta?nombre=Facebook&id=2">Facebook</link>
+                    <Link to="/cuenta?nombre=Facebook&id=2">Facebook</Link>
                 </li>
                 <li>
-                    <link to="/ceunta?nombre=Google&id=3">Google</link>
+                    <Link to="/cuenta?nombre=Google&id=3">Google</Link>
                 </li>
                 <li>
-                    <link to="/ceunta?nombre=Twitter&id=4">Twitter</link>
+                    <Link to="/cuenta?nombre=Twitter&id=4">Twitter</Link>
                 </li>
             </ul>
             <Child nombreCuenta={query.get('nombre')} id_usuario={query.get('id')}/>
