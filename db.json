@@ -1,0 +1,19 @@
+{
+    "estudiantes":[
+        {
+            "id": 1,
+            "nombre": "Maria Perez",
+            "materia": "PHP"
+        },
+        {
+            "id": 2,
+            "nombre": "Esteban Rodriguez",
+            "materia": "JAVA"
+        },
+        {
+            "id": 3,
+            "nombre": "Celeste Severich",
+            "materia": "NodeJS"
+        }
+    ]
+}
