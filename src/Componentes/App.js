@@ -1,14 +1,12 @@
 import React from 'react';
-
 import ListadoConectado from './Listado';
-
 
 function App(){
     return(
         <React.Fragment>
             <div className="container">
                 <h1>Ejemplo Redux</h1>
-                <ListadoConectado />
+                <ListadoConectado/>
             </div>
         </React.Fragment>
     )
