@@ -1,6 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import logo from './logo.svg';
+import './App.css';
+import Header from './componentes/Header';
+import Crud from './componentes/Crud';
 
-//const template=React.createElement('p',{},"Hola mundo desde REACT.JS");
-const template=<p>Hola mundo desde React con JSX</p>
-ReactDOM.render(template,document.getElementById('root'));
+function App() {
+  return (
+    <div className="App">
+      <Header />
+      <Crud />
+    </div>
+  );
+}
+
+export default App;
