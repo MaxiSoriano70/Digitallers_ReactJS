@@ -1,19 +1,39 @@
 {
-    "estudiantes":[
-        {
-            "id": 1,
-            "nombre": "Maria Perez",
-            "materia": "PHP"
-        },
-        {
-            "id": 2,
-            "nombre": "Esteban Rodriguez",
-            "materia": "JAVA"
-        },
-        {
-            "id": 3,
-            "nombre": "Celeste Severich",
-            "materia": "NodeJS"
-        }
-    ]
+  "estudiantes": [
+    {
+      "id": 1,
+      "nombre": "Maria Perez",
+      "materia": "PHP"
+    },
+    {
+      "id": 2,
+      "nombre": "Esteban Rodriguez",
+      "materia": "JAVA"
+    },
+    {
+      "id": 3,
+      "nombre": "Celeste Severich",
+      "materia": "INGLES"
+    },
+    {
+      "id": 4,
+      "nombre": "Karen Dominguez",
+      "materia": "JSON"
+    },
+    {
+      "nombre": "Yesica Sulca",
+      "materia": "ANGULAR.JS",
+      "id": 7
+    },
+    {
+      "nombre": "Edin Dzeko",
+      "materia": "PHP",
+      "id": 8
+    },
+    {
+      "nombre": "Maxi Soriano",
+      "materia": "C#",
+      "id": 9
+    }
+  ]
 }
